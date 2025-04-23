@@ -4,6 +4,7 @@ import { authUser, fetchUsertoStorage, getOrPostData, updateUserContextFromStora
 import { ContextError } from './ContextError';
 import { ContextUser } from './ContextUser';
 import { NavLink } from "react-router-dom";
+import './Page_Login.css';
 
 export default function Page_Login() {
 
@@ -54,12 +55,8 @@ export default function Page_Login() {
     }, [responseData]);
 
     async function handleLogin() {
-        console.log(formDatas);
-        if (await authUser(formDatas, setError, setIsErrorExist)) {
-            await getOrPostData("http://127.0.0.1:8000/api/get-user/", "GET", "message", setResponseData, setError, setIsErrorExist);
-
-            refreshToken = localStorage.getItem("refreshToken");
-        }
+        setIsErrorExist(true);
+        navigate('/');
     }
 
     const htmlContent = (

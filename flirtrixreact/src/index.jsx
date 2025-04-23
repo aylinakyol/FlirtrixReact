@@ -9,6 +9,7 @@ import { ContextUser_Provider } from './ContextUser';
 import ProtectedRoute from './ProtectedRoute';
 import Page_Register from './Page_Register';
 import Page_Profile from './Page_Profile';
+import Page_Home from './Page_Home';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -20,9 +21,7 @@ root.render(
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={
-                        <ProtectedRoute>
-            
-                        </ProtectedRoute>
+                        <Page_Home />
                     } />
                     
                     <Route path="profile/" element={

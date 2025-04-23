@@ -22,9 +22,6 @@ export function ContextUser_Provider({ children }) {
     useEffect(()=>{
         if (!isUserInStorage) {
             console.log("ContextUser useEffect(isUserInStorage): Storage'da user yok.");
-            // Buraya, getUser koymamız lazım.
-            // Get user eğer fetch yapamıyorsa, isUserExist'i undefined değil de false yapmamız lazım.
-            // bu işlem protected route'un bizi login sayfasına yönlendirmesini sağlayacak.
             setIsUserExist(false);
         } else {
             console.log("ContextUser useEffect(isUserInStorage): Storage'da user mevcut.");
